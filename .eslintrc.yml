@@ -1,0 +1,26 @@
+plugins:
+  - jest
+
+env:
+  node: true
+
+extends:
+  - 'airbnb-base'
+  - 'plugin:jest/recommended'
+
+parserOptions:
+  ecmaVersion: latest
+
+rules: {
+  no-console: 0,
+   no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }],
+   import/extensions: 0,
+   import/no-extraneous-dependencies: [
+     "error",
+  {
+    "devDependencies": ["test/**"],
+    "optionalDependencies": false,
+    "peerDependencies": false
+  }
+]
+}
