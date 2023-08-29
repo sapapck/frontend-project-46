@@ -47,10 +47,10 @@ Optional arguments:
 ## Supported formats:
 
 ### stylish
-[![asciicast](https://asciinema.org/a/Sn8PhmeJLv3VIJhQ2MwbiXPiX)](https://asciinema.org/a/Sn8PhmeJLv3VIJhQ2MwbiXPiX) 
+[![asciicast](https://asciinema.org/a/Sn8PhmeJLv3VIJhQ2MwbiXPiX.svg)](https://asciinema.org/a/Sn8PhmeJLv3VIJhQ2MwbiXPiX) 
 
 ### plain
- [![asciicast](https://asciinema.org/a/ern1I0x8F4eMaaTJxXE8EDZFH)](https://asciinema.org/a/ern1I0x8F4eMaaTJxXE8EDZFH)
+ [![asciicast](https://asciinema.org/a/ern1I0x8F4eMaaTJxXE8EDZFH.svg)](https://asciinema.org/a/ern1I0x8F4eMaaTJxXE8EDZFH)
 
 ### json
- [![asciicast](https://asciinema.org/a/CqTMrrHt3KZHQHGogZ6H2AGOR)](https://asciinema.org/a/CqTMrrHt3KZHQHGogZ6H2AGOR)
+ [![asciicast](https://asciinema.org/a/CqTMrrHt3KZHQHGogZ6H2AGOR.svg)](https://asciinema.org/a/CqTMrrHt3KZHQHGogZ6H2AGOR)
