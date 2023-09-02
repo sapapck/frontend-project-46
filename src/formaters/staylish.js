@@ -20,30 +20,34 @@ const strinfyi = (value, depth) => {
 };
 
 const stylish = (ast) => {
-  const iter = (value, depth) => {
+  const iter = (tree, depth) => {
     const indentSize = depth * spaceCount;
     const currentIndent = replacer.repeat(indentSize - offsetToLeft);
     const bracketIndent = replacer.repeat(indentSize - spaceCount);
 
-    const lines = value.map((node) => {
-      switch (node.type) {
+    const lines = tree.map((node) => {
+      const {
+        key, type, value, children, valueOld, valueNew,
+      } = node;
+
+      switch (type) {
         case 'deleted':
-          return `${currentIndent}- ${node.key}: ${strinfyi(node.value, depth + 1)}`;
+          return `${currentIndent}- ${key}: ${strinfyi(value, depth + 1)}`;
 
         case 'added':
-          return `${currentIndent}+ ${node.key}: ${strinfyi(node.value, depth + 1)}`;
+          return `${currentIndent}+ ${key}: ${strinfyi(value, depth + 1)}`;
 
         case 'nested':
-          return `${currentIndent}  ${node.key}: ${iter(node.children, depth + 1)}`;
+          return `${currentIndent}  ${key}: ${iter(children, depth + 1)}`;
 
         case 'changed':
           return [
-            `${currentIndent}- ${node.key}: ${strinfyi(node.valueOld, depth + 1)}`,
-            `${currentIndent}+ ${node.key}: ${strinfyi(node.valueNew, depth + 1)}`,
+            `${currentIndent}- ${key}: ${strinfyi(valueOld, depth + 1)}`,
+            `${currentIndent}+ ${key}: ${strinfyi(valueNew, depth + 1)}`,
           ].join('\n');
 
         case 'unchanged':
-          return `${currentIndent}  ${node.key}: ${strinfyi(node.value, depth + 1)}`;
+          return `${currentIndent}  ${key}: ${strinfyi(value, depth + 1)}`;
       }
       return null;
     });
