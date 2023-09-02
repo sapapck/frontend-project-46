@@ -5,7 +5,7 @@ import buildAst from './getAst.js';
 import formatAst from './formaters/index.js';
 
 const getFileInformation = (filepath) => {
-  const absolutePath = path.resolve(process.cwd(), '__fixtures__', filepath);
+  const absolutePath = path.resolve(process.cwd(), 'tests', '__fixtures__', filepath);
   const readFile = fs.readFileSync(absolutePath, 'utf-8');
   const formatFile = path.extname(filepath).slice(1);
   const parsedData = getParsedData(readFile, formatFile);
